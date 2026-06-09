@@ -48,6 +48,16 @@ function Navbar() {
           </li>
 
           <li>
+            <NavLink
+              to="/downloads"
+              className={navLinkClass}
+              onClick={() => setIsOpen(false)}
+            >
+              Download
+            </NavLink>
+          </li>
+
+          <li>
             <NavLink to="/about" className={navLinkClass}>
               About
             </NavLink>
@@ -58,6 +68,8 @@ function Navbar() {
               Contact
             </NavLink>
           </li>
+
+          
 
           {/* <li>
             <button className="bg-white text-[#0B4AA2] px-4 py-2 rounded-full font-semibold hover:bg-green-100 transition">
@@ -96,6 +108,16 @@ function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Services
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/downloads"
+                className={navLinkClass}
+                onClick={() => setIsOpen(false)}
+              >
+                Download
               </NavLink>
             </li>
 
