@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import ServicesPage from "./Pages/ServicesPage";
 import ServiceDetailsPage from "./Pages/ServiceDetailsPage";
 import DownloadPage from "./Pages/DownloadPage";
+import JpgToPdf from "./Tools/JpgToPdf";
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
           path="/services/:slug"
           element={<ServiceDetailsPage />}
         />
-
+        <Route
+          path="/tools/jpg-to-pdf"
+          element={<JpgToPdf />}
+        />
         <Route path="/downloads" element={<DownloadPage />} />
       </Routes>
       <Footer />

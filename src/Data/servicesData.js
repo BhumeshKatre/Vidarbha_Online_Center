@@ -4,14 +4,11 @@ export const servicesData = [
     slug: "farmer-id-card",
     title: "Farmer ID Card",
     category: "mahadbt",
-    image: "https://marathidiary.com/wp-content/uploads/2025/06/Farmer-ID-Card-Maharashtra-Registration-Online-Info.jpg",
+    image: "https://cf-images.assettype.com/saamtv%2F2025-03-17%2Fyg8aui85%2Ffarmer-id.jpg?w=768&auto=format%2Ccompress&fit=max",
     processingTime: "1-3 Days",
     featured: true,
-    documents: [
-      "Aadhaar Card",
-      "Mobile Number",
-      "7/12 Extract"
-    ]
+    officialLink: "https://agristack.maharashtra.gov.in/",
+    documents: ["Aadhaar Card", "Mobile Number", "7/12 Extract"],
   },
 
   {
@@ -19,84 +16,226 @@ export const servicesData = [
     slug: "pm-kisan-registration",
     title: "PM Kisan Registration",
     category: "mahadbt",
-    image: "https://vajiramias.sgp1.cdn.digitaloceanspaces.com/wp/current-affairs/2025/07/PM-1.webp?v=2",
+    image: "https://pbs.twimg.com/media/GkhugR9XEAAFwAw.jpg",
     processingTime: "1-3 Days",
     featured: true,
-    documents: [
-      "Aadhaar Card",
-      "Bank Passbook",
-      "Farmer Card"
-    ]
+    officialLink: "https://pmkisan.gov.in/",
+    documents: ["Aadhaar Card", "Bank Passbook"],
+  },
+
+  {
+    id: 3,
+    slug: "abha-card",
+    title: "ABHA Card",
+    category: "health",
+    image: "https://5.imimg.com/data5/SELLER/Default/2025/12/565757778/BI/SL/KI/8978926/ayushman-bharat-health-card-abha-printing-project.jpg",
+    processingTime: "10 Minutes",
+    featured: true,
+    officialLink: "https://abha.abdm.gov.in/",
+    documents: ["Aadhaar Card", "Mobile Number"],
+  },
+
+  {
+    id: 4,
+    slug: "ayushman-card",
+    title: "Ayushman Card",
+    category: "health",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoIpkqwCG7wjIssTv_IHPf_0ikdYTer69MQ&s",
+    processingTime: "1 Day",
+    featured: true,
+    officialLink: "https://beneficiary.nha.gov.in/",
+    documents: ["Aadhaar Card", "Ration Card"],
+  },
+
+  {
+    id: 5,
+    slug: "income-certificate",
+    title: "Income Certificate",
+    category: "aaplesarkar",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJzkzzcSzze3Rocg3idfbWK-NjSwFrppHQDg&s",
+    processingTime: "7-15 Days",
+    featured: true,
+    officialLink: "https://aaplesarkar.mahaonline.gov.in/",
+    documents: ["Aadhaar Card", "Ration Card"],
   },
 
   {
     id: 6,
-    slug: "income-certificate",
-    title: "Income Certificate",
+    slug: "domicile-certificate",
+    title: "Domicile Certificate",
     category: "aaplesarkar",
-    image: "https://sarkarisuvidha.online/img/newimg/service/feature/income-certificate.webp",
+    image: "...",
     processingTime: "7-15 Days",
     featured: true,
-    documents: [
-      "Aadhaar Card",
-      "Ration Card",
-      "Talathi Ahwal (utpnacha Dakhala)"
-    ]
+    officialLink: "https://aaplesarkar.mahaonline.gov.in/",
+    documents: ["Aadhaar Card", "Address Proof"],
+  },
+
+  {
+    id: 7,
+    slug: "caste-certificate",
+    title: "Caste Certificate",
+    category: "aaplesarkar",
+    image: "...",
+    processingTime: "15-30 Days",
+    featured: true,
+    officialLink: "https://aaplesarkar.mahaonline.gov.in/",
+    documents: ["Aadhaar Card", "School Leaving Certificate"],
+  },
+
+  {
+    id: 8,
+    slug: "non-creamy-layer",
+    title: "Non Creamy Layer Certificate",
+    category: "aaplesarkar",
+    image: "...",
+    processingTime: "15 Days",
+    featured: true,
+    officialLink: "https://aaplesarkar.mahaonline.gov.in/",
+    documents: ["Income Certificate", "Aadhaar Card"],
+  },
+
+  {
+    id: 9,
+    slug: "birth-certificate",
+    title: "Birth Certificate",
+    category: "documents",
+    image: "...",
+    processingTime: "7 Days",
+    featured: true,
+    officialLink: "",
+    documents: ["Hospital Record", "Parents Aadhaar"],
+  },
+
+  {
+    id: 10,
+    slug: "death-certificate",
+    title: "Death Certificate",
+    category: "documents",
+    image: "...",
+    processingTime: "7 Days",
+    featured: true,
+    officialLink: "",
+    documents: ["Hospital Certificate"],
+  },
+
+  {
+    id: 11,
+    slug: "pan-card",
+    title: "PAN Card",
+    category: "documents",
+    image: "https://www.pancardapp.com/assets/img/form-pages/duplicate-pan-card/duplicate-pan-card.jpg",
+    processingTime: "7-15 Days",
+    featured: true,
+    officialLink: "https://www.onlineservices.nsdl.com/",
+    documents: ["Aadhaar Card", "Photo"],
+  },
+
+  {
+    id: 12,
+    slug: "voter-id",
+    title: "Voter ID Card",
+    category: "documents",
+    image: "...",
+    processingTime: "15 Days",
+    featured: true,
+    officialLink: "https://voters.eci.gov.in/",
+    documents: ["Aadhaar Card", "Photo"],
   },
 
   {
     id: 13,
-    slug: "ayushman-card",
-    title: "Ayushman Card",
-    category: "govtscheme",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShUUUnFIBfRq5tLlZ01-PpIiUTEiisYyYxdw&s",
-    processingTime: "1 Day",
+    slug: "driving-license",
+    title: "Driving License",
+    category: "transport",
+    image: "...",
+    processingTime: "30 Days",
     featured: true,
-    documents: [
-      "Aadhaar Card",
-      "Mobile Number",
-      "Ration Card"
-    ]
+    officialLink: "https://parivahan.gov.in/",
+    documents: ["Aadhaar Card", "Learner License"],
   },
 
-  // {
-  //   id: 22,
-  //   slug: "aeps-service",
-  //   title: "AEPS Service",
-  //   category: "banking",
-  //   image: "/services/aeps-service.webp",
-  //   processingTime: "Instant",
-  //   featured: true,
-  //   documents: [
-  //     "Aadhaar Card"
-  //   ]
-  // },
+  {
+    id: 14,
+    slug: "learning-license",
+    title: "Learning License",
+    category: "transport",
+    image: "...",
+    processingTime: "1 Day",
+    featured: true,
+    officialLink: "https://parivahan.gov.in/",
+    documents: ["Aadhaar Card"],
+  },
 
-  // {
-  //   id: 26,
-  //   slug: "pan-card",
-  //   title: "PAN Card",
-  //   category: "documents",
-  //   image: "/services/pan-card.webp",
-  //   processingTime: "7-15 Days",
-  //   featured: true,
-  //   documents: [
-  //     "Aadhaar Card",
-  //     "Photo"
-  //   ]
-  // },
+  {
+    id: 15,
+    slug: "passport-service",
+    title: "Passport Service",
+    category: "documents",
+    image: "...",
+    processingTime: "30 Days",
+    featured: true,
+    officialLink: "https://www.passportindia.gov.in/",
+    documents: ["Aadhaar Card", "Address Proof"],
+  },
 
-  // {
-  //   id: 31,
-  //   slug: "banner-design",
-  //   title: "Banner Design",
-  //   category: "design",
-  //   image: "/services/banner-design.webp",
-  //   processingTime: "1 Day",
-  //   featured: true,
-  //   documents: [
-  //     "Logo",
-  //     "Business Details"
-  //   ]
-  // }
+  {
+    id: 16,
+    slug: "ration-card",
+    title: "Ration Card",
+    category: "govtscheme",
+    image: "...",
+    processingTime: "15 Days",
+    featured: true,
+    officialLink: "",
+    documents: ["Aadhaar Card", "Family Details"],
+  },
+
+  {
+    id: 17,
+    slug: "mahadbt-scholarship",
+    title: "MahaDBT Scholarship",
+    category: "education",
+    image: "...",
+    processingTime: "30 Days",
+    featured: true,
+    officialLink: "https://mahadbt.maharashtra.gov.in/",
+    documents: ["Aadhaar Card", "Marksheet"],
+  },
+
+  {
+    id: 18,
+    slug: "e-shram-card",
+    title: "E-Shram Card",
+    category: "labour",
+    image: "...",
+    processingTime: "Instant",
+    featured: true,
+    officialLink: "https://eshram.gov.in/",
+    documents: ["Aadhaar Card", "Mobile Number"],
+  },
+
+  {
+    id: 19,
+    slug: "labour-card",
+    title: "Labour Card",
+    category: "labour",
+    image: "...",
+    processingTime: "15 Days",
+    featured: true,
+    officialLink: "",
+    documents: ["Aadhaar Card", "Work Proof"],
+  },
+
+  {
+    id: 20,
+    slug: "senior-citizen-card",
+    title: "Senior Citizen Card",
+    category: "govtscheme",
+    image: "...",
+    processingTime: "7 Days",
+    featured: true,
+    officialLink: "",
+    documents: ["Aadhaar Card", "Age Proof"],
+  }
 ];

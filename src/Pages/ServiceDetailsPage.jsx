@@ -60,18 +60,23 @@ function ServiceDetailsPage() {
             </div>
 
             <div className="flex gap-4 mt-8">
-              <button className="bg-[#0B4AA2] text-white px-6 py-3 rounded-lg hover:bg-green-600 transition">
+              <button
+                onClick={() =>
+                  window.open(service.officialLink, "_blank")
+                }
+                className="bg-[#0B4AA2] text-white px-6 py-3 rounded-lg hover:bg-green-600 transition"
+              >
                 Apply Now
               </button>
 
-              <a
-                href="https://wa.me/918459729470"
+              <Link
+                path="https://wa.me/918459729470"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-green-600 text-white px-6 py-3 rounded-lg"
               >
                 WhatsApp
-              </a>
+              </Link>
             </div>
           </div>
 

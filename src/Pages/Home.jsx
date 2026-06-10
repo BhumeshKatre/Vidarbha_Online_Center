@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Hero from '../Components/Hero';
 import ServicesSection from '../Components/Services';
+import ToolsSection from '../Components/ToolSection';
 
 class Home extends Component {
   render() {
@@ -8,6 +9,7 @@ class Home extends Component {
       <div>
         <Hero />
         <ServicesSection />
+        <ToolsSection />
       </div>
     );
   }
