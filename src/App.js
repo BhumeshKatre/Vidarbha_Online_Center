@@ -10,21 +10,30 @@ import JpgToPdf from "./Tools/JpgToPdf";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
 import ImageCompressor from "./Tools/ImageCompressor";
+import ImageCropper from "./Tools/ImageCropper";
+import AgeCalculator from "./Tools/AgeCalculator";
+import ToolPage from "./Pages/ToolPage";
+import ToolDetailsPage from "./Pages/ToolDetailsPage";
+import BarcodeGenerator from "./Tools/BarcodeGenerator";
 
 function App() {
   return (
     <>
       <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/:slug" element={<ServiceDetailsPage />} />
-            <Route path="/tools/jpg-to-pdf" element={<JpgToPdf />} />
-            <Route path="/tools/image-compressor" element={<ImageCompressor />} />
-            <Route path="/downloads" element={<DownloadPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/Contact" element={<ContactPage />} />
-          </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServiceDetailsPage />} />
+        <Route path="/tools" element={<ToolPage />} />
+        <Route path="/tools/jpg-to-pdf" element={<JpgToPdf />} />
+        <Route path="/tools/image-compressor" element={<ImageCompressor />} />
+        <Route path="/tools/crop-image" element={<ImageCropper />} />
+        <Route path="/tools/age-calculator" element={<AgeCalculator />} />
+        <Route path="/tools/barcode-generator/app" element={<BarcodeGenerator />} />
+        <Route path="/downloads" element={<DownloadPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/Contact" element={<ContactPage />} />
+      </Routes>
       <Footer />
     </>
   );

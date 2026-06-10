@@ -48,6 +48,12 @@ function Navbar() {
           </li>
 
           <li>
+            <NavLink to="/tools" className={navLinkClass}>
+              Tools
+            </NavLink>
+          </li>
+
+          <li>
             <NavLink
               to="/downloads"
               className={navLinkClass}
@@ -111,6 +117,14 @@ function Navbar() {
               </NavLink>
             </li>
 
+
+            <li>
+              <NavLink to="/tools" className={navLinkClass}>
+                Tools
+              </NavLink>
+            </li> 
+
+            
             <li>
               <NavLink
                 to="/downloads"

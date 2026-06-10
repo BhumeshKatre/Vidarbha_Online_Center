@@ -31,7 +31,7 @@ function ServicesSection() {
           {featuredServices.slice(0,4).map((service) => (
             <div
               key={service.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-green"
             >
               {/* Image */}
               <img

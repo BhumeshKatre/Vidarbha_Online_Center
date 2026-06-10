@@ -149,7 +149,7 @@ function ImageCompressor() {
               <input
                 type="number"
                 value={targetSizeKB}
-                onChange={(e) => setTargetSizeKB(Math.max(0, parseInt(e.target.value) || 0))}
+                onChange={(e) => setTargetSizeKB(Math.max(0, parseInt(e.target.value) ))}
                 className="w-full px-4 py-3 font-bold text-slate-700 focus:outline-none text-base"
                 placeholder="उदा. 50, 100, 200"
                 min="1"

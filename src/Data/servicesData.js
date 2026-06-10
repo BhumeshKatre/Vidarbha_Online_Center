@@ -7,7 +7,7 @@ export const servicesData = [
     image: "https://cf-images.assettype.com/saamtv%2F2025-03-17%2Fyg8aui85%2Ffarmer-id.jpg?w=768&auto=format%2Ccompress&fit=max",
     processingTime: "1-3 Days",
     featured: true,
-    officialLink: "https://agristack.maharashtra.gov.in/",
+    officialLink: "https://mhfr.agristack.gov.in/farmer-registry-mh/#/",
     offlineFormLink: "",
     governmentFees: "₹0",
     serviceCharge: "₹50",
