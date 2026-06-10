@@ -13,7 +13,6 @@ import ImageCompressor from "./Tools/ImageCompressor";
 import ImageCropper from "./Tools/ImageCropper";
 import AgeCalculator from "./Tools/AgeCalculator";
 import ToolPage from "./Pages/ToolPage";
-import ToolDetailsPage from "./Pages/ToolDetailsPage";
 import BarcodeGenerator from "./Tools/BarcodeGenerator";
 
 function App() {
