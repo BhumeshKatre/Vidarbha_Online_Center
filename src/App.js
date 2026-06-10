@@ -7,6 +7,8 @@ import ServicesPage from "./Pages/ServicesPage";
 import ServiceDetailsPage from "./Pages/ServiceDetailsPage";
 import DownloadPage from "./Pages/DownloadPage";
 import JpgToPdf from "./Tools/JpgToPdf";
+import AboutPage from "./Pages/AboutPage";
+import ContactPage from "./Pages/ContactPage";
 
 function App() {
   return (
@@ -16,15 +18,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route
-          path="/services/:slug"
-          element={<ServiceDetailsPage />}
-        />
-        <Route
-          path="/tools/jpg-to-pdf"
-          element={<JpgToPdf />}
-        />
+        <Route path="/services/:slug" element={<ServiceDetailsPage />} />
+        <Route path="/tools/jpg-to-pdf" element={<JpgToPdf />} />
         <Route path="/downloads" element={<DownloadPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/Contact" element={<ContactPage />} />
       </Routes>
       <Footer />
     </>

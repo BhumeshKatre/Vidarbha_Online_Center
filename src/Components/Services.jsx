@@ -28,7 +28,7 @@ function ServicesSection() {
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          {featuredServices.map((service) => (
+          {featuredServices.slice(0,4).map((service) => (
             <div
               key={service.id}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
