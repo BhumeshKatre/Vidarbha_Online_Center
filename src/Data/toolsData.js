@@ -11,7 +11,7 @@ export const toolsData = [
     id: 2,
     title: "Image Compressor",
     slug: "image-compressor",
-    image: "/tools/compressor.webp",
+    image: "/tools/image-compressor",
     description: "Reduce image size without losing quality.",
     featured: true,
   },

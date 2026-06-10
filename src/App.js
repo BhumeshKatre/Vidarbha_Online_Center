@@ -9,21 +9,22 @@ import DownloadPage from "./Pages/DownloadPage";
 import JpgToPdf from "./Tools/JpgToPdf";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
+import ImageCompressor from "./Tools/ImageCompressor";
 
 function App() {
   return (
     <>
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/services/:slug" element={<ServiceDetailsPage />} />
-        <Route path="/tools/jpg-to-pdf" element={<JpgToPdf />} />
-        <Route path="/downloads" element={<DownloadPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/Contact" element={<ContactPage />} />
-      </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetailsPage />} />
+            <Route path="/tools/jpg-to-pdf" element={<JpgToPdf />} />
+            <Route path="/tools/image-compressor" element={<ImageCompressor />} />
+            <Route path="/downloads" element={<DownloadPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/Contact" element={<ContactPage />} />
+          </Routes>
       <Footer />
     </>
   );
