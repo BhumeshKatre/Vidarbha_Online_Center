@@ -119,12 +119,16 @@ function Navbar() {
 
 
             <li>
-              <NavLink to="/tools" className={navLinkClass}>
+              <NavLink
+                to="/tools"
+                className={navLinkClass}
+                onClick={() => setIsOpen(false)}
+              >
                 Tools
               </NavLink>
             </li> 
 
-            
+
             <li>
               <NavLink
                 to="/downloads"
