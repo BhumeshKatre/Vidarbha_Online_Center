@@ -40,8 +40,8 @@ class ServicesPage extends Component {
     ];
 
     return (
-      <div className="bg-slate-50 min-h-screen py-10">
-        <div className="max-w-7xl mx-auto px-4">
+      <div className="bg-slate-50 min-h-screen py-10 ">
+        <div className="max-w-7xl mx-auto px-4 ">
 
           {/* Heading */}
           <h1 className="text-4xl font-bold text-center text-[#0B4AA2] mb-8">

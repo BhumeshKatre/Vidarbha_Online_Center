@@ -5,7 +5,7 @@ function ContactPage() {
     <div className="bg-slate-50 min-h-screen">
 
       {/* Hero Section */}
-      <section className="bg-[#0B4AA2] text-white py-20">
+      <section className="bg-gradient-to-br from-green-600 via-blue-900 to-green-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold">
             Contact Us

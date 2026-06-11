@@ -26,7 +26,7 @@ const ToolsPage = () => {
     <div className="bg-slate-50 min-h-screen selection:bg-blue-200">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0B4AA2] to-blue-700 text-white py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-green-600 via-blue-900 to-green-600 text-white py-20 relative overflow-hidden">
         {/* बैकग्राउंड डिज़ाइन एलिमेंट्स */}
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-50/10 rounded-full blur-xl"></div>
