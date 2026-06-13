@@ -1,69 +1,67 @@
 import React, { useState, useEffect } from "react";
 
+// ✅ FIX: Move the static object OUTSIDE the component function.
+// This prevents it from being recreated on every render cycle.
+const unitData = {
+  length: {
+    label: "📏 Length / Distance",
+    units: [
+      { code: "m", name: "Meter (मी)" },
+      { code: "cm", name: "Centimeter (सेमी)" },
+      { code: "km", name: "Kilometer (किमी)" },
+      { code: "ft", name: "Feet (फीट)" },
+      { code: "in", name: "Inch (इंच)" },
+      { code: "mi", name: "Mile (मील)" }
+    ],
+    factors: { m: 1, cm: 100, km: 0.001, ft: 3.28084, in: 39.3701, mi: 0.000621371 }
+  },
+  weight: {
+    label: "🏋️ Weight / Mass",
+    units: [
+      { code: "kg", name: "Kilogram (किग्रा)" },
+      { code: "g", name: "Gram (ग्राम)" },
+      { code: "lb", name: "Pound (पौंड)" },
+      { code: "oz", name: "Ounce (औंस)" },
+      { code: "q", name: "Quintal (क्विंटल)" }
+    ],
+    factors: { kg: 1, g: 1000, lb: 2.20462, oz: 35.274, q: 0.01 }
+  },
+  area: {
+    label: "📐 Area / Land Space",
+    units: [
+      { code: "sqm", name: "Square Meter (वर्ग मी)" },
+      { code: "sqft", name: "Square Feet (वर्ग फीट)" },
+      { code: "acre", name: "Acre (एकड़)" },
+      { code: "hectare", name: "Hectare (हेक्टेयर)" }
+    ],
+    factors: { sqm: 1, sqft: 10.7639, acre: 0.000247105, hectare: 0.0001 }
+  },
+  temperature: {
+    label: "🌡️ Temperature",
+    units: [
+      { code: "C", name: "Celsius (°C)" },
+      { code: "F", name: "Fahrenheit (°F)" },
+      { code: "K", name: "Kelvin (K)" }
+    ]
+  }
+};
+
 function UnitConverter() {
   const [category, setCategory] = useState("length");
   const [inputValue, setInputValue] = useState("1");
-  const [fromUnit, setFromUnit] = useState("");
-  const [toUnit, setToUnit] = useState("");
+  const [fromUnit, setFromUnit] = useState("m");
+  const [toUnit, setToUnit] = useState("cm");
   const [result, setResult] = useState(null);
 
-  // Structural definition mapping for all calculation metrics and conversions base units
-  const unitData = {
-    length: {
-      label: "📏 Length / Distance",
-      units: [
-        { code: "m", name: "Meter (मी)" },
-        { code: "cm", name: "Centimeter (सेमी)" },
-        { code: "km", name: "Kilometer (किमी)" },
-        { code: "ft", name: "Feet (फीट)" },
-        { code: "in", name: "Inch (इंच)" },
-        { code: "mi", name: "Mile (मील)" }
-      ],
-      // Conversion factors calculated relative to 1 Meter base benchmark
-      factors: { m: 1, cm: 100, km: 0.001, ft: 3.28084, in: 39.3701, mi: 0.000621371 }
-    },
-    weight: {
-      label: "🏋️ Weight / Mass",
-      units: [
-        { code: "kg", name: "Kilogram (किग्रा)" },
-        { code: "g", name: "Gram (ग्राम)" },
-        { code: "lb", name: "Pound (पौंड)" },
-        { code: "oz", name: "Ounce (औंस)" },
-        { code: "q", name: "Quintal (क्विंटल)" }
-      ],
-      // Conversion factors calculated relative to 1 Kilogram base benchmark
-      factors: { kg: 1, g: 1000, lb: 2.20462, oz: 35.274, q: 0.01 }
-    },
-    area: {
-      label: "📐 Area / Land Space",
-      units: [
-        { code: "sqm", name: "Square Meter (वर्ग मी)" },
-        { code: "sqft", name: "Square Feet (वर्ग फीट)" },
-        { code: "acre", name: "Acre (एकड़)" },
-        { code: "hectare", name: "Hectare (हेक्टेयर)" }
-      ],
-      // Conversion factors calculated relative to 1 Square Meter base benchmark
-      factors: { sqm: 1, sqft: 10.7639, acre: 0.000247105, hectare: 0.0001 }
-    },
-    temperature: {
-      label: "🌡️ Temperature",
-      units: [
-        { code: "C", name: "Celsius (°C)" },
-        { code: "F", name: "Fahrenheit (°F)" },
-        { code: "K", name: "Kelvin (K)" }
-      ]
-    }
-  };
-
-  // Reset default selection options handles whenever user modifies core operational categories
+  // Effect 1: Reset drop menus when core operational categories change
   useEffect(() => {
     const defaultUnits = unitData[category].units;
     setFromUnit(defaultUnits[0].code);
     setToUnit(defaultUnits[1].code);
     setResult(null);
-  }, [category]);
+  }, [category]); // ✅ Warning Fixed! (unitData is now global and static)
 
-  // Execute background conversion parameters calculation loop dynamically
+  // Effect 2: Core conversion math runtime block logic
   useEffect(() => {
     const val = parseFloat(inputValue);
     if (isNaN(val)) {
@@ -76,16 +74,12 @@ function UnitConverter() {
       return;
     }
 
-    // Special absolute calculations logic for non-linear metric units (Temperature)
     if (category === "temperature") {
       let tempInCelsius = 0;
-
-      // Stage 1: Normalize incoming inputs back to Celsius
       if (fromUnit === "C") tempInCelsius = val;
       else if (fromUnit === "F") tempInCelsius = (val - 32) * (5 / 9);
       else if (fromUnit === "K") tempInCelsius = val - 273.15;
 
-      // Stage 2: Transform localized Celsius metrics into target parameters
       let finalTemp = 0;
       if (toUnit === "C") finalTemp = tempInCelsius;
       else if (toUnit === "F") finalTemp = tempInCelsius * (9 / 5) + 32;
@@ -93,22 +87,20 @@ function UnitConverter() {
 
       setResult(parseFloat(finalTemp.toFixed(2)));
     } else {
-      // Linear conversions framework calculation via metric relational factors tables mappings
       const categoryConfig = unitData[category];
       const baseValue = val / categoryConfig.factors[fromUnit];
       const targetValue = baseValue * categoryConfig.factors[toUnit];
 
       setResult(parseFloat(targetValue.toPrecision(6)));
     }
-  }, [inputValue, fromUnit, toUnit, category]);
+  }, [inputValue, fromUnit, toUnit, category]); // ✅ Warning Fixed!
 
-  // Fast axes parameter swapping routine handles
   const swapUnits = () => {
     const temp = fromUnit;
     setFromUnit(toUnit);
     setToUnit(temp);
   };
-
+  
   return (
     <div className="min-h-screen bg-slate-50 py-12 selection:bg-blue-200">
       <div className="max-w-5xl mx-auto px-4">

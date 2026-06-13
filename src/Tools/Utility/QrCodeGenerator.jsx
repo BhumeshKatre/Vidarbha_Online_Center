@@ -1,41 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react"; // ✅ Fixed Line 1
 import QRCode from "qrcode";
 
 function QrGenerator() {
   const [activeTab, setActiveTab] = useState("url");
   const [qrImageUrl, setQrImageUrl] = useState("");
-  
-  // State parameters for Mode 1: URL / Website Link
+
   const [url, setUrl] = useState("https://");
-
-  // State parameters for Mode 2: Pure Text
   const [text, setText] = useState("");
-
-  // State parameters for Mode 3: WiFi Configuration Settings
   const [wifiSsid, setWifiSsid] = useState("");
   const [wifiPassword, setWifiPassword] = useState("");
-  const [wifiEncryption, setWifiEncryption] = useState("WPA"); // 'WPA', 'WEP', or 'nopass'
-
-  // State parameters for Mode 4: UPI Digital Payment
+  const [wifiEncryption, setWifiEncryption] = useState("WPA");
   const [upiId, setUpiId] = useState("");
   const [payeeName, setPayeeName] = useState("");
   const [amount, setAmount] = useState("");
 
-  const canvasRef = useRef(null);
-
-  // Generate the structural string data layout based on the active tab config parameters
-  const getQrRawData = () => {
+  const getQrRawData = useCallback(() => {
     switch (activeTab) {
       case "url":
         return url.trim();
       case "text":
         return text;
       case "wifi":
-        // Standard WiFi QR format: WIFI:S:SSID;T:WPA;P:PASSWORD;;
         return `WIFI:S:${wifiSsid};T:${wifiEncryption};P:${wifiPassword};;`;
       case "upi":
-        // Standard National Payments Corporation of India (NPCI) UPI deep-link specification
-        // Format: upi://pay?pa=id@vpa&pn=Name&am=Amount&cu=INR
         const cleanName = encodeURIComponent(payeeName.trim());
         let upiString = `upi://pay?pa=${upiId.trim()}&pn=${cleanName}&cu=INR`;
         if (amount.trim() && parseFloat(amount) > 0) {
@@ -45,27 +32,24 @@ function QrGenerator() {
       default:
         return "";
     }
-  };
+  }, [url, text, wifiSsid, wifiEncryption, wifiPassword, payeeName, upiId, amount, activeTab]);
 
-  // Compile raw textual parameters into visual QR Code canvas matrices safely
-  const generateQrCode = async () => {
+  const generateQrCode = useCallback(async () => {
     const rawData = getQrRawData();
-    
-    // Prevent rendering empty or default fallback placeholder blocks
+
     if (!rawData || rawData === "https://" || rawData === "upi://pay?pa=&pn=&cu=INR") {
       setQrImageUrl("");
       return;
     }
 
     try {
-      // Generate standalone target Data URL with higher precision resolution scales (Scale 8 ~ 300+ pixels)
       const options = {
         width: 300,
         margin: 2,
-        errorCorrectionLevel: "H", // High error correction to handle print folds or scratches safely
+        errorCorrectionLevel: "H",
         color: {
-          dark: "#000000",  // Crisp solid black modules for perfect optical scanners readability
-          light: "#ffffff"  // High contrast stark white background canvas
+          dark: "#000000",
+          light: "#ffffff"
         }
       };
 
@@ -74,13 +58,13 @@ function QrGenerator() {
     } catch (err) {
       console.error("QR Code Generation Framework Crash:", err);
     }
-  };
+  }, [getQrRawData]);
 
-  // Auto trigger background compilation rendering loops when inputs alter dynamically
   useEffect(() => {
     generateQrCode();
-  }, [url, text, wifiSsid, wifiPassword, wifiEncryption, upiId, payeeName, amount, activeTab]);
+  }, [generateQrCode]); 
 
+// ... बाकी का नीचे का UI कोड बिल्कुल सेम रहेगा भाई
   // Handle immediate physical download actions of the computed high DPI asset file
   const downloadQrCode = () => {
     if (!qrImageUrl) return;
