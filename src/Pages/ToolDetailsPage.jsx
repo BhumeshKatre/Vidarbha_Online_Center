@@ -14,20 +14,53 @@ import AgeCalculator from "../Tools/AgeCalculator";
 import AadhaarPhotoMaker from "../Tools/AadhaarPhotoMaker";
 import JpgToPdf from "../Tools/JpgToPdf";
 import ImageCropper from "../Tools/ImageCropper";
+import EmiCalculator from "../Tools/Calculators/EmiCalculatior";
+import BmiCalculator from "../Tools/Calculators/BmiCalculator";
+import PercentageCalculator from "../Tools/Calculators/PercentageCalculator";
+import GstCalculator from "../Tools/Calculators/GstCalculator";
+import LoanCalculator from "../Tools/Calculators/LoanCalculator";
+import SipCalculator from "../Tools/Calculators/SipCalculator";
+import SimpleInterestCalculator from "../Tools/Calculators/SimpleInterestCalculator";
+import TextCaseConverter from "../Tools/Utility/TextCaseConverter";
+import PasswordGenerator from "../Tools/Utility/PasswordGenrator";
+import UnitConverter from "../Tools/Utility/UnitConverter";
+import WordCounter from "../Tools/Utility/WordCounter";
+import CurrencyConverter from "../Tools/Utility/CurrencyConverter";
+import QrGenerator from "../Tools/Utility/QrCodeGenerator";
 
 // Object map matching tool slugs directly to their active functional component views
 const TOOL_COMPONENTS = {
+  // Original Graphics & Document Tools Stack
   "image-compressor": <ImageCompressor />,
   "image-resizer": <ImageResizer />,
+  "crop-image": <ImageCropper />,
   "barcode-generator": <BarcodeGenerator />,
+  "aadhaar-photo-maker": <AadhaarPhotoMaker />,
+
+  // Standard PDF Operations Stack
   "pdf-to-word": <PdfToWord />,
   "pdf-compressor": <PdfCompressor />,
   "pdf-splitter": <PdfSplitter />,
   "pdf-merger": <PdfMerger />,
-  "age-calculator": <AgeCalculator />,
-  "aadhaar-photo-maker": <AadhaarPhotoMaker />,
   "jpg-to-pdf": <JpgToPdf />,
-  "crop-image": <ImageCropper />
+
+  // Advanced Commercial Finance Stack
+  "emi-calculator": <EmiCalculator />,
+  "percentage-calculator": <PercentageCalculator />,
+  "gst-calculator": <GstCalculator />,
+  "loan-calculator": <LoanCalculator />,
+  "sip-calculator": <SipCalculator />,
+  "simple-interest-calculator": <SimpleInterestCalculator />,
+  "currency-converter": <CurrencyConverter />,
+
+  // General Framework Utilities Stack
+  "age-calculator": <AgeCalculator />,
+  "bmi-calculator": <BmiCalculator />,
+  "qr-code-generator": <QrGenerator />,
+  "text-case-converter": <TextCaseConverter />,
+  "password-generator": <PasswordGenerator/>,
+  "unit-converter": <UnitConverter />,
+  "word-counter": <WordCounter />,
 };
 
 const ToolDetailsPage = () => {
